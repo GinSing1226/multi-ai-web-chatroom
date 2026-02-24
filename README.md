@@ -26,6 +26,9 @@
 - 🔒 **隐私安全** - 所有数据存储在本地，使用你自己的 AI 账号，不上传任何服务器
 - 🤖 **智能操作** - 封装了 AI Skill，支持 Claude Code、OpenClaw 等 Agent 自动操作
 
+<img width="1911" height="1000" alt="image" src="https://github.com/user-attachments/assets/17cd2544-9bd0-4eb7-adcf-25571ab3caff" />
+
+
 ## 为什么需要这个工具？
 
 ### 传统方式的痛点
