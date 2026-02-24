@@ -492,11 +492,10 @@ export function SettingsModal({
                   <label className="block text-sm font-medium text-text-primary mb-3">
                     {t('settings.appearance.theme')}
                   </label>
-                  <div className="grid grid-cols-3 gap-3">
+                  <div className="grid grid-cols-2 gap-3">
                     {[
                       { value: 'light', label: t('settings.appearance.theme.light'), icon: '☀️' },
                       { value: 'dark', label: t('settings.appearance.theme.dark'), icon: '🌙' },
-                      { value: 'system', label: t('settings.appearance.theme.system'), icon: '💻' },
                     ].map((theme) => (
                       <button
                         key={theme.value}

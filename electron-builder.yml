@@ -16,6 +16,9 @@ files:
   - "!**/tsconfig.json"
   - "!**/*.map"
   - "!**/.git/*"
+  - "!**/.env"
+  - "!**/.env.*"
+  - "!**/icon.ico"
 
 # ASAR 打包（禁用以支持 Playwright）
 # Playwright 需要 native 模块，不能在 ASAR 中运行
@@ -23,7 +26,7 @@ asar: false
 
 # Windows 配置
 win:
-  icon: build/icon.ico
+  icon: "icon.ico"
   target:
     - target: nsis
       arch:

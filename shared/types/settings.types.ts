@@ -25,7 +25,7 @@ export interface AppSettings {
   /** 语言 */
   language: 'zh' | 'en';
   /** 主题 */
-  theme: 'light' | 'dark' | 'system';
+  theme: 'light' | 'dark';
   /** 自动保存 */
   autoSave: boolean;
 
@@ -43,7 +43,7 @@ export interface AppSettings {
 /**
  * 主题模式
  */
-export type ThemeMode = 'light' | 'dark' | 'system';
+export type ThemeMode = 'light' | 'dark';
 
 /**
  * 默认设置
@@ -59,7 +59,7 @@ export const DEFAULT_SETTINGS: AppSettings = {
   username: 'User',
   avatarPath: '',
   language: 'zh',
-  theme: 'system',
+  theme: 'light',
   autoSave: true,
 
   // 智能玩法

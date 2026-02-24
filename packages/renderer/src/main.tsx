@@ -19,21 +19,14 @@ import './utils/renderer-logger';
 // 🔥 修复：主题初始化改为异步，从主进程读取设置
 // 🔥 Fix: Make theme initialization async, read from main process settings
 const initializeTheme = async () => {
-  console.log('🎨 [init] 初始化主题 / Initializing theme...');
+  const savedMode = localStorage.getItem('theme-mode') as 'light' | 'dark' || 'light';
 
-  // 先从 localStorage 读取（快速显示），然后从主进程同步
-  // First read from localStorage (fast display), then sync from main process
-  const savedMode = localStorage.getItem('theme-mode') as 'light' | 'dark' | 'system' || 'system';
-
-  const applyTheme = (mode: 'light' | 'dark' | 'system') => {
-    const isDark = mode === 'system'
-      ? window.matchMedia('(prefers-color-scheme: dark)').matches
-      : mode === 'dark';
+  const applyTheme = (mode: 'light' | 'dark') => {
+    const isDark = mode === 'dark';
 
     document.documentElement.classList.toggle('dark', isDark);
     document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
     localStorage.setItem('theme-mode', mode); // 同步到 localStorage
-    console.log('🎨 [init] 应用主题 / Applied theme:', mode, 'isDark:', isDark);
   };
 
   // 先应用 localStorage 中的值（避免闪烁）
@@ -47,28 +40,11 @@ const initializeTheme = async () => {
 
     if (window.electronAPI && window.electronAPI.settings) {
       const settings = await window.electronAPI.settings.get();
-      console.log('🎨 [init] 从主进程读取主题 / Theme from main process:', settings.theme);
       applyTheme(settings.theme);
-    } else {
-      console.warn('⚠️ [init] electronAPI 不可用，使用 localStorage 值 / electronAPI not available, using localStorage value');
     }
   } catch (error) {
     console.error('❌ [init] 读取主题设置失败，使用 localStorage 值 / Failed to read theme settings, using localStorage value:', error);
   }
-
-  // 监听系统主题变化（仅在 system 模式下）
-  const watchSystemTheme = () => {
-    const currentMode = localStorage.getItem('theme-mode');
-    if (currentMode === 'system') {
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-        console.log('🎨 [init] 系统主题变化，重新应用 / System theme changed, reapplying');
-        applyTheme('system');
-      });
-    }
-  };
-
-  // 延迟监听，确保从主进程读取完成
-  setTimeout(watchSystemTheme, 200);
 };
 
 initializeTheme();
