@@ -26,6 +26,9 @@ English | [简体中文](./README.md) | [Documentation for Agents](./README_agen
 - 🔒 **Privacy First** - All data stored locally, uses your own AI accounts, no server uploads
 - 🤖 **Smart Operations** - Embedded AI Skills for automated operations by Claude Code, OpenClaw, and other Agents
 
+<img width="1911" height="1000" alt="image" src="https://github.com/user-attachments/assets/1592a527-ea3d-467d-9511-3d2e95fd2fc3" />
+
+
 ## Why This Tool?
 
 ### Pain Points of Traditional Methods
