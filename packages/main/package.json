@@ -1,0 +1,25 @@
+{
+  "name": "multi-ai-web-chatroom-main",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./bootstrap.cjs",
+  "type": "module",
+  "scripts": {
+    "dev": "electron-vite dev --watch",
+    "build": "electron-vite build",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "electron-store": "^10.0.0",
+    "gray-matter": "^4.0.3",
+    "playwright": "^1.48.0",
+    "winston": "^3.14.2",
+    "winston-daily-rotate-file": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "electron": "^40.6.0",
+    "electron-vite": "^5.0.0",
+    "typescript": "^5.5.0"
+  }
+}

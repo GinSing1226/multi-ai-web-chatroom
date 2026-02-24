@@ -1,0 +1,58 @@
+# 依赖 / Dependencies
+node_modules/
+.pnp/
+.pnp.js
+.npm-cache/
+
+# 构建输出 / Build output
+dist/
+dist-ssr/
+*.local/
+out/
+build/
+release/
+
+# Electron
+*.log
+.DS_Store
+Thumbs.db
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 环境变量
+.env
+.env.local
+.env.*.local
+
+# 数据目录
+data/
+sessions/
+archived/
+logs/
+log_*.txt
+*-audit.json
+
+# 测试
+coverage/
+.nyc_output/
+playwright-report/
+test-results/
+
+# 临时和测试文件
+*.tmp
+.cache/
+test.html
+test-simple.html
+test-*.js
+
+# 文档
+docs/
+
+# Playwright
+playwright-*
+.playwright/

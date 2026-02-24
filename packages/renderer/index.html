@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Temporarily disable CSP for debugging -->
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self' 'unsafe-inline';"> -->
+  <title>多AI对比聊天室</title>
+  <style>
+    /* 强制设置深色模式边界线颜色 / Force dark mode border colors */
+    [data-theme='dark'] {
+      --border-secondary: #2f2f2f !important;
+      --border-color: #3a3a3a !important;
+    }
+
+    /* 深色模式强制覆盖所有使用 border-secondary 的元素 */
+    [data-theme='dark'] .border-border-secondary,
+    [data-theme='dark'] [class*="border-border-secondary"] {
+      border-color: #2f2f2f !important;
+    }
+
+    [data-theme='dark'] .border-border-color,
+    [data-theme='dark'] [class*="border-border-color"] {
+      border-color: #3a3a3a !important;
+    }
+
+    /* Loading indicator */
+    #loading {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-family: system-ui, sans-serif;
+    }
+    #loading .spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #f3f4f6;
+      border-top-color: #3b82f6;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    #error {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      padding: 20px;
+      background: #fee;
+      border: 1px solid #f88;
+      border-radius: 8px;
+      font-family: system-ui, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading indicator -->
+  <div id="loading">
+    <div class="spinner"></div>
+    <p>加载中...</p>
+  </div>
+
+  <!-- Error message -->
+  <div id="error">
+    <h2>⚠️ 加载失败</h2>
+    <p id="error-message"></p>
+    <button onclick="location.reload()">重新加载</button>
+  </div>
+
+  <!-- Root element -->
+  <div id="root"></div>
+
+  <!-- Main script -->
+  <script type="module" src="./src/main.tsx"></script>
+
+  <!-- Error handling -->
+  <script>
+    // Debug info - 立即输出
+    console.log('=== HTML Debug Start ===');
+    console.log('✅ index.html loaded');
+    console.log('URL:', window.location.href);
+    console.log('Protocol:', window.location.protocol);
+    console.log('Has electronAPI:', typeof window.electronAPI !== 'undefined');
+    console.log('Document ready state:', document.readyState);
+
+    // 检查 root 元素 - 定期检查
+    const checkRoot = () => {
+      const rootElement = document.getElementById('root');
+      console.log('Root element:', rootElement);
+      if (rootElement) {
+        console.log('Root element tag:', rootElement.tagName);
+        console.log('Root element innerHTML:', rootElement.innerHTML.substring(0, 200));
+        console.log('Root element children:', rootElement.children.length);
+        if (rootElement.children.length > 0) {
+          console.log('First child tag:', rootElement.children[0].tagName);
+          console.log('First child classes:', rootElement.children[0].className);
+        }
+      }
+    };
+
+    // 立即检查一次
+    checkRoot();
+
+    // 1秒后再检查
+    setTimeout(checkRoot, 1000);
+
+    // 3秒后再检查
+    setTimeout(checkRoot, 3000);
+
+    // Hide loading on load
+    window.addEventListener('load', () => {
+      console.log('✅ Window load event fired');
+      setTimeout(() => {
+        const loading = document.getElementById('loading');
+        const root = document.getElementById('root');
+        console.log('Loading check - loading element:', loading);
+        console.log('Loading check - root children:', root?.children.length);
+        if (loading && root && root.children.length > 0) {
+          loading.style.display = 'none';
+          console.log('✅ Loading hidden, content loaded');
+        } else {
+          console.log('⚠️ Still loading or no content');
+        }
+      }, 500);
+    });
+
+    // Catch errors
+    window.addEventListener('error', (event) => {
+      console.error('❌ Global error:', event.error);
+      console.error('Error message:', event.message);
+      console.error('Error filename:', event.filename);
+      console.error('Error line:', event.lineno);
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('error').style.display = 'block';
+      const errorMsg = event.message || '未知错误';
+      document.getElementById('error-message').textContent = errorMsg;
+      document.getElementById('error-message').innerHTML += '<br><br>File: ' + (event.filename || 'unknown') + ':' + (event.lineno || '?');
+    });
+
+    // Catch unhandled promise rejections
+    window.addEventListener('unhandledrejection', (event) => {
+      console.error('❌ Unhandled rejection:', event.reason);
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('error').style.display = 'block';
+      document.getElementById('error-message').textContent = event.reason || 'Promise 错误';
+    });
+
+    console.log('=== HTML Debug End ===');
+
+    // 定期检查根元素状态
+    setInterval(() => {
+      const root = document.getElementById('root');
+      if (root) {
+        const hasContent = root.innerHTML.length > 100;
+        if (!hasContent) {
+          console.warn('⚠️ Root element still empty or nearly empty!');
+          console.warn('Root innerHTML:', root.innerHTML.substring(0, 200));
+        }
+      }
+    }, 5000);
+  </script>
+</body>
+</html>

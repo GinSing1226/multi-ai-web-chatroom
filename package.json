@@ -1,0 +1,83 @@
+{
+  "name": "multi-ai-web-chatroom",
+  "version": "0.1.0",
+  "description": "多AI对比聊天室 - 基于AI网页端的多平台对比工具 / Multi-AI Web Chatroom - Compare multiple AI platforms simultaneously",
+  "private": false,
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/multi-ai-web-chatroom.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/multi-ai-web-chatroom/issues"
+  },
+  "homepage": "https://github.com/yourusername/multi-ai-web-chatroom#readme",
+  "keywords": [
+    "ai",
+    "chatgpt",
+    "deepseek",
+    "gemini",
+    "electron",
+    "playwright",
+    "automation",
+    "multi-ai",
+    "ai-comparison",
+    "chatroom"
+  ],
+  "main": "out/main/bootstrap.cjs",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "build:win": "electron-vite build && npx electron-builder --win --config.compression=maximum",
+    "build:mac": "electron-vite build && electron-builder --mac",
+    "build:linux": "electron-vite build && electron-builder --linux",
+    "cli": "node scripts/cli.js",
+    "cli:start": "node scripts/cli.js start --wait",
+    "cli:send": "node scripts/cli.js send",
+    "cli:get-output": "node scripts/cli.js get-output",
+    "cli:search": "node scripts/cli.js search",
+    "cli:get-conversation": "node scripts/cli.js get-conversation",
+    "logs": "node scripts/read-logs.js",
+    "verify-fix": "node scripts/verify-fix.js",
+    "auto:chat": "npx tsx auto/auto-chat-cdp.spec.ts",
+    "auto:send": "npx tsx auto/auto-send-message.spec.ts",
+    "auto:get": "npx tsx auto/auto-get-output.spec.ts",
+    "auto:build": "tsc -p tsconfig.auto.json"
+  },
+  "engines": {
+    "node": ">=24.0.0",
+    "npm": ">=10.0.0"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.58.2",
+    "clsx": "^2.1.1",
+    "fast-xml-parser": "^5.3.7",
+    "playwright": "^1.58.2",
+    "react-markdown": "^10.1.0",
+    "tailwind-merge": "^3.5.0",
+    "turndown": "^7.2.2"
+  },
+  "devDependencies": {
+    "@types/turndown": "^5.0.6",
+    "@vitejs/plugin-react": "^4.7.0",
+    "cross-env": "^10.1.0",
+    "electron": "^40.6.0",
+    "electron-builder": "^26.8.1",
+    "electron-vite": "^5.0.0",
+    "sharp": "^0.34.5",
+    "tsx": "^4.21.0"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "fast-xml-parser": "^5.3.7",
+    "playwright": "^1.58.2",
+    "react-markdown": "^10.1.0",
+    "tailwind-merge": "^3.5.0",
+    "turndown": "^7.2.2"
+  }
+}

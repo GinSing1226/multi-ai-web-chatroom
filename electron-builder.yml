@@ -1,0 +1,63 @@
+# electron-builder 配置文件
+# electron-builder Configuration File
+
+appId: com.multi-ai-web-chatroom.app
+productName: Multi AI-Web Chatroom
+directories:
+  buildResources: build
+  output: release
+
+# 文件包含/排除规则
+files:
+  - "out/**/*"
+  - "packages/**/*"
+  - "node_modules/**"
+  - "!**/.vscode/*"
+  - "!**/tsconfig.json"
+  - "!**/*.map"
+  - "!**/.git/*"
+
+# ASAR 打包（禁用以支持 Playwright）
+# Playwright 需要 native 模块，不能在 ASAR 中运行
+asar: false
+
+# Windows 配置
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+
+# NSIS 安装程序配置
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
+  perMachine: false
+
+# macOS 配置
+mac:
+  target:
+    - target: dmg
+    - target: zip
+  icon: build/icon.icns
+  category: public.app-category.productivity
+  darkModeSupport: true
+
+# Linux 配置
+linux:
+  target:
+    - target: deb
+    # AppImage 在 Windows 上无法构建（需要 mksquashfs）
+    # - target: AppImage
+  icon: build/icons
+  category: Productivity
+  synopsis: 多AI对比聊天室 - 一次提问，多方对比
+  description: Multi AI-Web Chatroom - Compare responses from multiple AI platforms simultaneously
+
+# 发布配置（可选，用于自动发布到 GitHub）
+publish:
+  provider: github
+  owner: yourusername
+  repo: multi-ai-web-chatroom
