@@ -550,10 +550,10 @@ export default function SessionList() {
         setSelectedConversationId(null);
         navigate('/', { replace: true });
       }
-      showToast({ message: t('session.archiveSuccess'), type: 'success' });
+      showToast({ message: t('session.deleteSuccess'), type: 'success' });
     } catch (error) {
       console.error('删除会话失败:', error);
-      showToast({ message: t('session.archiveFailed'), type: 'error' });
+      showToast({ message: t('session.deleteFailed'), type: 'error' });
     }
   };
 

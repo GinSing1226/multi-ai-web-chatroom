@@ -149,7 +149,7 @@ export const BUILTIN_AI_APPLICATIONS: AiApplication[] = [
   },
   {
     id: 'glm',
-    name: 'GLM (智谱清言)',
+    name: 'GLM (z.ai)',
     shortName: 'GLM',
     description: '智谱清言 AI 对话系统',
     url: 'https://chat.z.ai',
@@ -164,7 +164,7 @@ export const BUILTIN_AI_APPLICATIONS: AiApplication[] = [
   },
   {
     id: 'kimi',
-    name: 'Kimi (月之暗面)',
+    name: 'kimi',
     shortName: 'Kimi',
     description: '月之暗面 AI 对话系统',
     url: 'https://kimi.moonshot.cn',
