@@ -23,6 +23,7 @@ asar: false
 
 # Windows 配置
 win:
+  icon: build/icon.ico
   target:
     - target: nsis
       arch:
