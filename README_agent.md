@@ -54,7 +54,7 @@
 
 ```bash
 # 1. 克隆仓库
-git clone https://github.com/yourusername/multi-ai-web-chatroom.git
+git clone https://github.com/GinSing1226/multi-ai-web-chatroom.git
 cd multi-ai-web-chatroom
 
 # 2. 安装依赖
@@ -490,6 +490,6 @@ data/
 
 ## 相关链接
 
-- [项目 GitHub](https://github.com/yourusername/multi-ai-web-chatroom)
-- [Issues](https://github.com/yourusername/multi-ai-web-chatroom/issues)
-- [Discussions](https://github.com/yourusername/multi-ai-web-chatroom/discussions)
+- [项目 GitHub](https://github.com/GinSing1226/multi-ai-web-chatroom)
+- [Issues](https://github.com/GinSing1226/multi-ai-web-chatroom/issues)
+- [Discussions](https://github.com/GinSing1226/multi-ai-web-chatroom/discussions)

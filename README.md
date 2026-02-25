@@ -5,7 +5,7 @@
 一款跨平台的多AI聊天室（或称为AI竞技场），基于 AI 平台网页自动化操作，让你一次提问，同时获得多个 AI 平台的结果对比。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-blue)](https://github.com/yourusername/multi-ai-web-chatroom)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-blue)](https://github.com/GinSing1226/multi-ai-web-chatroom)
 [![Electron](https://img.shields.io/badge/Electron-40.6.0-47848f)](https://www.electronjs.org/)
 [![Node](https://img.shields.io/badge/Node-%3E=24.0.0-green)](https://nodejs.org/)
 
@@ -94,7 +94,7 @@
 
 ### 方式一：下载安装包（推荐）
 
-访问 [Releases](https://github.com/yourusername/multi-ai-web-chatroom/releases) 页面下载：
+访问 [Releases](https://github.com/GinSing1226/multi-ai-web-chatroom/releases) 页面下载：
 
 | 平台 | 文件格式 | 说明 |
 |------|----------|------|
@@ -120,7 +120,7 @@
 
 ```bash
 # 1. 克隆仓库
-git clone https://github.com/yourusername/multi-ai-web-chatroom.git
+git clone https://github.com/GinSing1226/multi-ai-web-chatroom.git
 cd multi-ai-web-chatroom
 
 # 2. 安装项目依赖
@@ -256,6 +256,12 @@ multi-ai-web-chatroom/
 - **状态管理**: [Zustand](https://github.com/pmndrs/zustand)
 - **构建工具**: [Vite](https://vitejs.dev/) + electron-vite
 
+## 未来规划
+
+- 🔍 **深度思考、联网搜索开关控制** - 支持为各 AI 平台配置是否启用深度思考、联网搜索等功能
+- 📎 **发送附件** - 支持发送图片、文档等附件给 AI 平台
+- 🤖 **集成更多 AI 应用** - 添加更多 AI 平台支持
+
 ## 常见问题
 
 ### Q: 应用是免费的吗？
@@ -313,8 +319,8 @@ data/
 
 ## 联系方式
 
-- 提交 [Issue](https://github.com/yourusername/multi-ai-web-chatroom/issues)
-- 发起 [Discussion](https://github.com/yourusername/multi-ai-web-chatroom/discussions)
+- 提交 [Issue](https://github.com/GinSing1226/multi-ai-web-chatroom/issues)
+- 发起 [Discussion](https://github.com/GinSing1226/multi-ai-web-chatroom/discussions)
 
 ## 致谢
 
@@ -325,6 +331,8 @@ data/
 - [React](https://react.dev/) - 用户界面库
 - [TailwindCSS](https://tailwindcss.com/) - CSS 框架
 - [Zustand](https://github.com/pmndrs/zustand) - 状态管理库
+- [turndown](https://github.com/mixmark-io/turndown) - HTML 转 Markdown 库
+- [react-markdown](https://github.com/remarkjs/react-markdown) - Markdown 渲染组件
 
 ---
 

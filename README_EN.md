@@ -5,7 +5,7 @@
 A cross-platform multi-AI chatroom (AI Arena) based on web automation, allowing you to ask questions once and get comparative results from multiple AI platforms simultaneously.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-blue)](https://github.com/yourusername/multi-ai-web-chatroom)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-blue)](https://github.com/GinSing1226/multi-ai-web-chatroom)
 [![Electron](https://img.shields.io/badge/Electron-40.6.0-47848f)](https://www.electronjs.org/)
 [![Node](https://img.shields.io/badge/Node-%3E=24.0.0-green)](https://nodejs.org/)
 
@@ -94,7 +94,7 @@ Combining both advantages, providing a **localized + automated** comparison solu
 
 ### Option 1: Download Installer (Recommended)
 
-Visit [Releases](https://github.com/yourusername/multi-ai-web-chatroom/releases) to download:
+Visit [Releases](https://github.com/GinSing1226/multi-ai-web-chatroom/releases) to download:
 
 | Platform | File Format | Notes |
 |----------|-------------|-------|
@@ -120,7 +120,7 @@ Visit [Releases](https://github.com/yourusername/multi-ai-web-chatroom/releases)
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/yourusername/multi-ai-web-chatroom.git
+git clone https://github.com/GinSing1226/multi-ai-web-chatroom.git
 cd multi-ai-web-chatroom
 
 # 2. Install dependencies
@@ -256,6 +256,12 @@ multi-ai-web-chatroom/
 - **State Management**: [Zustand](https://github.com/pmndrs/zustand)
 - **Build Tools**: [Vite](https://vitejs.dev/) + electron-vite
 
+## Roadmap
+
+- 🔍 **Deep Thinking & Web Search Toggle** - Support enabling/disabling deep thinking, web search, and other features for each AI platform
+- 📎 **Attachment Support** - Support sending images, documents, and other attachments to AI platforms
+- 🤖 **More AI Integrations** - Add support for more AI platforms
+
 ## FAQ
 
 ### Q: Is the app free?
@@ -313,8 +319,8 @@ This project is open source under the [MIT License](LICENSE).
 
 ## Contact
 
-- Submit [Issue](https://github.com/yourusername/multi-ai-web-chatroom/issues)
-- Start [Discussion](https://github.com/yourusername/multi-ai-web-chatroom/discussions)
+- Submit [Issue](https://github.com/GinSing1226/multi-ai-web-chatroom/issues)
+- Start [Discussion](https://github.com/GinSing1226/multi-ai-web-chatroom/discussions)
 
 ## Acknowledgments
 
@@ -325,6 +331,8 @@ Thanks to these excellent open source projects:
 - [React](https://react.dev/) - User interface library
 - [TailwindCSS](https://tailwindcss.com/) - CSS framework
 - [Zustand](https://github.com/pmndrs/zustand) - State management library
+- [turndown](https://github.com/mixmark-io/turndown) - HTML to Markdown converter library
+- [react-markdown](https://github.com/remarkjs/react-markdown) - Markdown rendering component
 
 ---
 
