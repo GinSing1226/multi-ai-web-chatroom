@@ -608,7 +608,7 @@ export function SettingsModal({
                 <div className="p-4 rounded-lg border border-border-secondary bg-bg-secondary">
                   <h4 className="text-sm font-medium text-text-primary mb-2">{t('settings.help.docs')}</h4>
                   <a
-                    href="https://github.com/your-repo/wiki"
+                    href="https://github.com/GinSing1226/multi-ai-web-chatroom"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-blue-600 hover:text-blue-700"
@@ -623,7 +623,7 @@ export function SettingsModal({
                     {t('settings.help.feedback.desc')}
                   </p>
                   <a
-                    href="https://github.com/your-repo/issues"
+                    href="https://github.com/GinSing1226/multi-ai-web-chatroom/issues"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-blue-600 hover:text-blue-700"
